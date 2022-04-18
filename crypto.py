@@ -55,16 +55,16 @@ y2 = coin2['price']
 coin_a = ax1.plot(x1, y1, label = f'{a.lower()}', color = '#F64D55')
 coin_b = ax2.plot(x2, y2, label = f'{b.lower()}', color = '#EDE582')
 
-plt.style.use('dark_background')
-t = f'{a.capitalize()} vs. {b.capitalize()} Historical performance'
-ax1.set_title(t, fontsize = 16)
-ax1.set_xlabel('Date')
-ax1.set_ylabel('Price')
-ax1.grid(alpha = 0.2)
+with plt.style.context('dark_background'):
+  t = f'{a.capitalize()} vs. {b.capitalize()} Historical performance'
+  ax1.set_title(t, fontsize = 16)
+  ax1.set_xlabel('Date')
+  ax1.set_ylabel('Price')
+  ax1.grid(alpha = 0.2)
 
-coins = coin_a + coin_b
-l = [x.get_label() for x in coins]
-ax1.legend(coins, l, loc = 0)
+  coins = coin_a + coin_b
+  l = [x.get_label() for x in coins]
+  ax1.legend(coins, l, loc = 'upper left')
 
-plt.plot()
-plt.show()
+  plt.plot()
+  plt.show()
