@@ -23,7 +23,7 @@ def get_data(coin):
     
     time, price = [], []
     for i in d['prices']:
-      time.append.(datetime.datetime.fromtimestamp(i[0]/1000))
+      time.append(datetime.datetime.fromtimestamp(i[0]/1000))
       price.append(i[1])
     
     raw_data = {
